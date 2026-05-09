@@ -2,7 +2,7 @@ from google import genai
 import streamlit as st
 import re
 
-def app(tech: str, api_key: str) -> str:
+def generate_badges(tech: str, api: str) -> str:
 
     prompt = f'''Generate only GitHub-style Markdown badges using Shields.io.
     Rules:
@@ -20,7 +20,7 @@ def app(tech: str, api_key: str) -> str:
     Output:
     ONLY badges in Markdown format and ONLy test ordered in 'Input:
     {tech}' '''
-    client = genai.Client(api_key=api_key)
+    client = genai.Client(api_key=api)
 
     response = client.models.generate_content(
         model="gemini-2.5-flash",
