@@ -20,11 +20,6 @@ def main(api: str):
             with st.spinner("Gerando badges..."):
                 try:
                     result = generate_badges(tech, api)
-                    if is_valid_badge(result):
-                        pass
-                    else:
-                        st.success("Erro, por favor tente novamente!")
-
                     st.success("Badges gerados!!")
                     st.markdown(result)
                     st.code(result, language="markdown")

@@ -1,4 +1,5 @@
-from google import genai
+# from google import genai
+from groq import Groq
 import streamlit as st
 import re
 
@@ -20,17 +21,19 @@ def generate_badges(tech: str, api: str) -> str:
     Output:
     ONLY badges in Markdown format and only test ordered in 'Input:
     {tech}' '''
-    client = genai.Client(api_key=api)
+    client = Groq(api_key=api)
 
-    response = client.models.generate_content(
-        model="gemini-2.5-flash",
-        contents=prompt
-    )
-    return response.text
+    response = client.chat.completions.create(
+        model="llama-3.3-70b-versatile",
+        messages=[{"role": "user", "content": prompt}]
+        )
+
+    return response.choices[0].message.content
 
     # for m in client.models.list():
         # print(m.name)
 
+# not using
 def is_valid_badge(text: str) -> bool:
     pattern = r"^!\[.+\]\(https://img\.shields\.io/badge/.+\)$"
     return bool(re.match(pattern.strip(), text.strip()))
