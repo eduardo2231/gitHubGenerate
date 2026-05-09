@@ -1,7 +1,4 @@
-from types import NoneType
-
 import streamlit as st
-from pydantic.v1 import NoneStr
 
 import app
 
