@@ -11,12 +11,10 @@ def main(api: str):
     de READMEs e portfólios.""")
     # Sua API key pegue em -------> https://aistudio.google.com/prompts/new_chat
     # Coloque dentro do arquivo app/.streamlit/secrets.toml dessa maneira -------> GEMINI_API_KEY = 'sua api_key'
+
     tech = st.text_input("Digite as tecnologias (ex: Python, Docker, React):")
-
     style_options = ['for-the-badge', 'flat']
-
     style = st.selectbox('Escolha um style:', style_options)
-
     if tech:
         st.write('Selecionadas:', tech)
 
