@@ -48,8 +48,8 @@ streamlit run main.py
 
 ## Screenshots
 
-![Example 1](app/exemple.png)
-![Example 2](app/exemple2.png)
+![Example 1](app/example.png)
+![Example 2](app/example2.png)
 
 ## Project Structure
 

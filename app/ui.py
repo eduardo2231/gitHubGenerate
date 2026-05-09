@@ -32,6 +32,6 @@ def main(api: str):
     """
     )
     st.markdown("[Acesse o meu GitHub](https://github.com/eduardo2231)")
-    st.image("app/exemple.png")
-    st.image("app/exemple2.png")
+    st.image("app/example.png")
+    st.image("app/example2.png")
 
