@@ -8,6 +8,7 @@ __pycache__/
 app/.streamlit/
 secrets.toml
 *.env
+.idea
 # Distribution / packaging
 .Python
 build/
