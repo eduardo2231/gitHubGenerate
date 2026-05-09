@@ -18,7 +18,7 @@ def generate_badges(tech: str, api: str) -> str:
     Input:
     {tech}
     Output:
-    ONLY badges in Markdown format and ONLy test ordered in 'Input:
+    ONLY badges in Markdown format and only test ordered in 'Input:
     {tech}' '''
     client = genai.Client(api_key=api)
 

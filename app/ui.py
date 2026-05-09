@@ -23,9 +23,9 @@ def main(api: str):
                     if is_valid_badge(result):
                         pass
                     else:
-                        st.success("Erro, porfavor tente novamente!")
+                        st.success("Erro, por favor tente novamente!")
 
-                    st.success("Badge gerado!")
+                    st.success("Badges gerados!!")
                     st.markdown(result)
                     st.code(result, language="markdown")
                 except Exception as e:
