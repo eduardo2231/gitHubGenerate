@@ -3,7 +3,7 @@ from groq import Groq
 import streamlit as st
 import re
 
-def generate_badges(tech: str, api: str) -> str:
+def generate_badges(tech: str, api: str, style_badge) -> str:
 
     prompt = f'''Generate only GitHub-style Markdown badges using Shields.io.
     Rules:
@@ -20,7 +20,7 @@ def generate_badges(tech: str, api: str) -> str:
     {tech}
     Output:
     ONLY badges in Markdown format and only test ordered in 'Input:
-    {tech}' '''
+    {tech}' and which following style {style_badge}, if dont exists, use the standard style '''
     client = Groq(api_key=api)
 
     response = client.chat.completions.create(
@@ -32,6 +32,9 @@ def generate_badges(tech: str, api: str) -> str:
 
     # for m in client.models.list():
         # print(m.name)
+
+    # style=for-the-badge
+    # style=flat
 
 # not using
 def is_valid_badge(text: str) -> bool:

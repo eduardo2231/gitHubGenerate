@@ -11,15 +11,22 @@ def main(api: str):
     de READMEs e portfólios.""")
     # Sua API key pegue em -------> https://aistudio.google.com/prompts/new_chat
     # Coloque dentro do arquivo app/.streamlit/secrets.toml dessa maneira -------> GEMINI_API_KEY = 'sua api_key'
-
     tech = st.text_input("Digite as tecnologias (ex: Python, Docker, React):")
+
+    style_options = ['for-the-badge', 'flat']
+
+    style = st.selectbox('Escolha um style:', style_options)
+
+    if tech:
+        st.write('Selecionadas:', tech)
+
     if st.button("Gerar Badges"):
         if tech.strip() == "":
             st.warning("Por favor, digite ao menos uma tecnologia.")
         else:
             with st.spinner("Gerando badges..."):
                 try:
-                    result = generate_badges(tech, api)
+                    result = generate_badges(tech, api, style)
                     st.success("Badges gerados!!")
                     st.markdown(result)
                     st.code(result, language="markdown")
@@ -34,4 +41,3 @@ def main(api: str):
     st.markdown("[Acesse o meu GitHub](https://github.com/eduardo2231)")
     st.image("app/example.png")
     st.image("app/example2.png")
-
