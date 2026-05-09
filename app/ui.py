@@ -1,7 +1,8 @@
 import streamlit as st
-import app
+from app.badge import generate_badges
+from app.badge import is_valid_badge
 
-def main():
+def main(api: str):
     st.title("StackAI")
     st.write(
         """StackAI é uma ferramenta com inteligência artificial
@@ -10,7 +11,6 @@ def main():
     de READMEs e portfólios.""")
     # Sua API key pegue em -------> https://aistudio.google.com/prompts/new_chat
     # Coloque dentro do arquivo app/.streamlit/secrets.toml dessa maneira -------> GEMINI_API_KEY = 'sua api_key'
-    api_key = st.secrets["GEMINI_API_KEY"]
 
     tech = st.text_input("Digite as tecnologias (ex: Python, Docker, React):")
     if st.button("Gerar Badges"):
@@ -19,11 +19,24 @@ def main():
         else:
             with st.spinner("Gerando badges..."):
                 try:
-                    result = app.app(tech, api_key)
-                    st.success("Badges gerados!")
+                    result = generate_badges(tech, api)
+                    if is_valid_badge(result):
+                        pass
+                    else:
+                        st.success("Erro, porfavor tente novamente!")
+
+                    st.success("Badge gerado!")
                     st.markdown(result)
                     st.code(result, language="markdown")
                 except Exception as e:
-                    st.error(f"Erro ao gerar badges: {e}")
-
+                    st.error(f"Erro ao gerar badge: {e}")
+    st.write("""
+    Depois de gerar suas badges, copie o código abaixo e cole no seu arquivo **README.md** do GitHub.
+    Cada badge representa uma tecnologia usada no seu projeto e ajuda a deixar seu repositório mais profissional e organizado.
+    Basta colar o Markdown gerado diretamente no README e ele será renderizado automaticamente como imagem no GitHub.
+    """
+    )
+    st.markdown("[Acesse o meu GitHub](https://github.com/eduardo2231)")
+    st.image("app/exemple.png")
+    st.image("app/exemple2.png")
 

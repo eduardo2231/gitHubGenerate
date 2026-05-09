@@ -5,7 +5,7 @@ __pycache__/
 # C extensions
 *.so
 # secrets
-app/.streamlit/
+.streamlit/
 secrets.toml
 *.env
 .idea
@@ -218,4 +218,4 @@ marimo/_lsp/
 __marimo__/
 
 # Streamlit
-app/.streamlit/secrets.toml
+.streamlit/secrets.toml
