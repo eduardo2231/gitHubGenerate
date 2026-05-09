@@ -1,3 +1,4 @@
-streamlit==1.37.0
-requests==2.32.3
+streamlit
 google-genai
+requests
+pillow==10.4.0
