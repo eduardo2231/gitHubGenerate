@@ -15,8 +15,9 @@ def main():
     # Sua API key pegue em -------> https://aistudio.google.com/prompts/new_chat
     # Coloque dentro do arquivo app/.streamlit/secrets.toml dessa maneira -------> GEMINI_API_KEY = 'sua api_key'
     api_key = st.secrets["GEMINI_API_KEY"]
+
     try:
-        text = app.app("postgresql", api_key)
+        text = app.app("eduardo", api_key)
         print(text)
     except NoneType as e:
         print(e)
