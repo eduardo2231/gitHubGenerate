@@ -11,10 +11,10 @@ StackAI is an intelligent badge generator for developers that transforms technol
 - **Instant Preview**: See generated badges immediately in the app
 
 ## Installation
-
+👉 [----------- Open -----------](https://stackai-uwoeuvm7sucpeztswuj2pm.streamlit.app/)
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/stackai.git
+   git clone https://github.com/eduardo2231/stackai.git
    cd stackai
    ```
 
@@ -23,15 +23,15 @@ StackAI is an intelligent badge generator for developers that transforms technol
    pip install -r requirements.txt
    ```
 
-3. Set up your Google Gemini API key (see API Key Setup below)
+3. Set up your Groq API key (see API Key Setup below)
 
 ## API Key Setup
 
-1. Get your API key from [Google AI Studio](https://aistudio.google.com/prompts/new_chat)
+1. Get your API key from Groq
 2. Create a file `app/.streamlit/secrets.toml` (create the .streamlit directory if it doesn't exist)
 3. Add your API key:
    ```
-   GEMINI_API_KEY = "your_api_key_here"
+   GROQ_API_KEY = "your_api_key_here"
    ```
 
 ## Usage
@@ -60,8 +60,8 @@ stackai/
 ├── app/
 │   ├── ui.py              # Streamlit user interface
 │   ├── badge.py           # Badge generation logic
-│   ├── exemple.png        # Example screenshot 1
-│   └── exemple2.png       # Example screenshot 2
+│   ├── example.png        # Example screenshot 1 
+│   └── example2.png       # Example screenshot 2
 └── README.md              # This file
 ```
 
@@ -69,27 +69,8 @@ stackai/
 
 - streamlit>=1.40.0
 - requests==2.32.3
-- google-genai
+- groq
 - pillow>=11.0.0
-
-## What Needs to Be Done and Commented
-
-### Code Quality Improvements
-- **Add comprehensive comments**: The code currently has minimal documentation. Add docstrings to all functions and classes explaining their purpose, parameters, and return values.
-- **Fix typos and inconsistencies**: 
-  - "exemple.png" should be "example.png" (filename and references)
-  - "ONLy" in prompt should be "only"
-  - "porfavor" should be "por favor"
-  - "Badge gerado!" should be "Badges gerados!" (plural)
-- **Improve error handling**: Add more robust error handling for API failures, invalid inputs, and network issues.
-- **Add logging**: Implement proper logging instead of print statements.
-
-### Functionality Enhancements
-- **Improve badge validation**: The `is_valid_badge` function only checks for single badges, but the app generates multiple. Update to validate multiple badges.
-- **Add tests**: Create unit tests for badge generation and validation functions.
-- **Internationalization**: Currently mixed Portuguese/English. Consider full English or proper i18n.
-- **Badge customization**: Allow users to choose colors or styles beyond AI defaults.
-- **Batch processing**: Better handling of multiple technologies input.
 
 ### UI/UX Improvements
 - **Loading states**: Better spinner messages and progress indicators.
@@ -114,7 +95,3 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Author
-
-[Your Name](https://github.com/yourusername)

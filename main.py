@@ -1,4 +1,4 @@
-from app.ui import main
+from app.badges_maker import main
 import streamlit as st
 
 if __name__ == '__main__':

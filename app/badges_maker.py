@@ -1,11 +1,11 @@
 import streamlit as st
-from app.badge import generate_badges
-from app.badge import is_valid_badge
+from app.badge_ai import generate_badges
+from app.badge_ai import is_valid_badge
 
 def main(api: str):
-    st.title("StackAI")
+    st.title("Badges makers")
     st.write(
-        """StackAI é uma ferramenta com inteligência artificial
+        """Badges makers é uma ferramenta com inteligência artificial
     que gera badges profissionais no estilo GitHub a partir
     do nome de qualquer tecnologia, facilitando a criação
     de READMEs e portfólios.""")
@@ -37,5 +37,4 @@ def main(api: str):
     """
     )
     st.markdown("[Acesse o meu GitHub](https://github.com/eduardo2231)")
-    st.image("app/example.png")
-    st.image("app/example2.png")
+    st.image("app/assets/example.png")

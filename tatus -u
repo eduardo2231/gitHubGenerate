@@ -1,0 +1,18 @@
+[1mdiff --git a/app/ui.py b/app/ui.py[m
+[1mindex c870920..7f2129a 100644[m
+[1m--- a/app/ui.py[m
+[1m+++ b/app/ui.py[m
+[36m@@ -11,12 +11,10 @@[m [mdef main(api: str):[m
+     de READMEs e portfólios.""")[m
+     # Sua API key pegue em -------> https://aistudio.google.com/prompts/new_chat[m
+     # Coloque dentro do arquivo app/.streamlit/secrets.toml dessa maneira -------> GEMINI_API_KEY = 'sua api_key'[m
+[31m-    tech = st.text_input("Digite as tecnologias (ex: Python, Docker, React):")[m
+ [m
+[32m+[m[32m    tech = st.text_input("Digite as tecnologias (ex: Python, Docker, React):")[m
+     style_options = ['for-the-badge', 'flat'][m
+[31m-[m
+     style = st.selectbox('Escolha um style:', style_options)[m
+[31m-[m
+     if tech:[m
+         st.write('Selecionadas:', tech)[m
+ [m
