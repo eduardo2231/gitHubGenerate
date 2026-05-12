@@ -77,7 +77,7 @@ The application uses Groq's AI API to interpret technology names and generate ap
 
 ## Screenshots
 
-![Example 1](assets/example.png)
+![Example 1](app/assets/example.png)
 
 ## Future Improvements
 
