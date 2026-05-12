@@ -1,5 +1,4 @@
 import streamlit as st
-from streamlit_sortables import sort_items
 
 class MainGithub:
     def __init__(self):
