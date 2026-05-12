@@ -4,14 +4,22 @@ StackAI is an intelligent badge generator for developers that transforms technol
 
 ## Features
 
-- **AI-Powered Generation**: Utilizes Google's Gemini AI to create accurate and professional badges
+- **AI-Powered Generation**: Leverages Groq AI to create accurate and professional badges
 - **GitHub-Style Badges**: Generates Shields.io compatible Markdown badges
-- **Multiple Technologies**: Support for generating badges for multiple technologies at once
+- **Multiple Technologies**: Supports generating badges for multiple technologies simultaneously
 - **Streamlit Interface**: User-friendly web interface for easy badge creation
-- **Instant Preview**: See generated badges immediately in the app
+- **Instant Preview**: View generated badges immediately within the app
+
+## Tech Stack
+
+- **Python**: Core programming language
+- **Streamlit**: Web framework for the user interface
+- **Groq**: AI service for badge generation
+- **Requests**: HTTP library for API interactions
+- **Pillow**: Image processing library
 
 ## Installation
-👉 [----------- Open -----------](https://stackai-uwoeuvm7sucpeztswuj2pm.streamlit.app/)
+
 1. Clone the repository:
    ```bash
    git clone https://github.com/eduardo2231/stackai.git
@@ -23,16 +31,13 @@ StackAI is an intelligent badge generator for developers that transforms technol
    pip install -r requirements.txt
    ```
 
-3. Set up your Groq API key (see API Key Setup below)
-
-## API Key Setup
-
-1. Get your API key from Groq
-2. Create a file `app/.streamlit/secrets.toml` (create the .streamlit directory if it doesn't exist)
-3. Add your API key:
-   ```
-   GROQ_API_KEY = "your_api_key_here"
-   ```
+3. Set up your Groq API key:
+   - Obtain your API key from Groq
+   - Create the directory `app/.streamlit/` if it doesn't exist
+   - Create a file `app/.streamlit/secrets.toml` and add:
+     ```
+     GROQ_API_KEY = "your_api_key_here"
+     ```
 
 ## Usage
 
@@ -46,47 +51,43 @@ streamlit run main.py
 3. Click "Gerar Badges" to generate badges
 4. Copy the generated Markdown code to your README.md
 
+## Project Structure
+
+```
+stackai/
+├── main.py                 # Main entry point for the Streamlit app
+├── requirements.txt        # Python dependencies
+├── LICENSE                 # Project license
+├── app/
+│   ├── sidebar.py          # Sidebar component for the UI
+│   ├── ai/
+│   │   ├── badge_ai.py     # AI logic for badge generation
+│   │   └── github_ai.py    # GitHub-specific AI integrations
+│   ├── assets/             # Static assets
+│   └── templates/          # Template files
+├── page/
+│   ├── badges_maker.py     # Badge creation page logic
+│   └── github_maker.py     # GitHub integration page logic
+└── README.md               # This file
+```
+
+## API / Logic Explanation
+
+The application uses Groq's AI API to interpret technology names and generate appropriate badge configurations. The `badge_ai.py` module handles the core AI interactions, while `github_ai.py` manages GitHub-specific badge formatting. The Streamlit interface in `main.py` orchestrates user input and displays results.
+
 ## Screenshots
 
 ![Example 1](app/example.png)
 ![Example 2](app/example2.png)
 
-## Project Structure
+## Future Improvements
 
-```
-stackai/
-├── main.py                 # Main entry point
-├── requirements.txt        # Python dependencies
-├── app/
-│   ├── ui.py              # Streamlit user interface
-│   ├── badge.py           # Badge generation logic
-│   ├── example.png        # Example screenshot 1 
-│   └── example2.png       # Example screenshot 2
-└── README.md              # This file
-```
-
-## Dependencies
-
-- streamlit>=1.40.0
-- requests==2.32.3
-- groq
-- pillow>=11.0.0
-
-### UI/UX Improvements
-- **Loading states**: Better spinner messages and progress indicators.
-- **Input validation**: Client-side validation for technology names.
-- **Export options**: Allow downloading badges as images or saving to clipboard.
-- **Responsive design**: Ensure the Streamlit app works well on mobile devices.
-
-### Security and Best Practices
-- **Environment variables**: Consider using environment variables instead of secrets.toml for API keys.
-- **Rate limiting**: Add rate limiting to prevent API abuse.
-- **Input sanitization**: Sanitize user inputs to prevent injection attacks.
-
-### Documentation
-- **API documentation**: Document the internal functions and classes.
-- **User guide**: More detailed usage instructions.
-- **Contributing guide**: Add guidelines for contributors.
+- **Loading States**: Enhance spinner messages and progress indicators
+- **Input Validation**: Implement client-side validation for technology names
+- **Export Options**: Add functionality to download badges as images or save to clipboard
+- **Responsive Design**: Optimize the Streamlit app for mobile devices
+- **Security Enhancements**: Use environment variables for API keys and add rate limiting
+- **Documentation**: Expand API documentation and user guides
 
 ## Contributing
 
