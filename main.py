@@ -1,6 +1,21 @@
-from app.badges_maker import main
+from page.badges_maker import MainBadge
+from page.github_maker import MainGithub
 import streamlit as st
+from app.sidebar import Sidebar
 
-if __name__ == '__main__':
-    api_key = st.secrets["GROQ_API_KEY"]
-    main(api_key)
+def main_dashboard():
+    # renderizando a barra lateral
+    sidebar = Sidebar()
+    page = sidebar.render()
+
+    # paginas
+    if page == "badges":
+        MainBadge()
+
+    elif page == "github":
+        github = MainGithub()
+        github.render()
+
+
+if __name__ == "__main__":
+    main_dashboard()
