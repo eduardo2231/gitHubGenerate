@@ -37,11 +37,26 @@ def MainBadge(api=st.secrets["GROQ_API_KEY"]):
     with tab2:
         user = st.text_input("Digite seu username:")
         stats_options = [
-            'SPLIT DASHBOARD STYLE',
-            'HERO HEADER STYLE',
-            'MINIMAL DEVELOPER STYLE',
-            'CYBER NEON STYLE',
-            'DATA DASHBOARD STYLE'
+            "Split Dashboard",
+            "Hero Header",
+            "Minimal Developer",
+            "Cyber Neon",
+            "Data Dashboard",
+            "Terminal Dark",
+            "Glassmorphism",
+            "Hacker Grid",
+            "Sunset Gradient",
+            "Arctic Ice",
+            "Retro Wave",
+            "Forest Green",
+            "Midnight Purple",
+            "Monochrome",
+            "Neon Orange",
+            "Deep Space",
+            "Red Matrix",
+            "Gold Elite",
+            "Pastel Soft",
+            "Classic Blue",
         ]
 
         stats = st.selectbox('Escolha um style:', stats_options)
