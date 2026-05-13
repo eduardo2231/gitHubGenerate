@@ -60,7 +60,7 @@ def MainBadge(api=st.secrets["GROQ_API_KEY"]):
 
                         components.html(
                             result,
-                            height=400,
+                            height=800,
                             scrolling=True
                         )
                     except Exception as e:
