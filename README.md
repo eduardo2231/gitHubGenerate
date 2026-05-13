@@ -1,5 +1,4 @@
-# StackAI
-
+# GitHubMaker 
 StackAI is an intelligent badge generator for developers that transforms technology names into professional GitHub-style badges using AI. Perfect for enhancing README files, portfolios, and project documentation with automatically generated, visually appealing badges.
 
 ## Features
