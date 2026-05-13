@@ -15,7 +15,7 @@ class Sidebar:
             """)
 
             if "page" not in st.session_state:
-                st.session_state.page = "github"
+                st.session_state.page = "badges"
 
             if st.button("Badges Maker"):
                 st.session_state.page = "badges"
