@@ -71,7 +71,7 @@ stackai/
 ```
 
 ## API / Logic Explanation
-The application uses Groq's AI API to interpret technology names and generate appropriate badge configurations. The `badge_ai.py` module handles the core AI interactions, while `github_ai.py` manages GitHub-specific badge formatting. The Streamlit interface in `main.py` orchestrates user input and displays results.
+The application uses Groq's AI API to interpret technology names and generate appropriate badge configurations. The `badge_ai.py` module handles the core AI interactions. The Streamlit interface in `main.py` orchestrates user input and displays results.
 
 ## Screenshots
 
