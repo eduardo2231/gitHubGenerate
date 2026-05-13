@@ -1,11 +1,6 @@
 import streamlit as st
 
 class Sidebar:
-
-    def __init__(self):
-        self.githubmaker = None
-        self.badges_maker = None
-
     def render(self):
         with st.sidebar:
             st.markdown("""
