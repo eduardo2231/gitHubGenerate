@@ -37,66 +37,30 @@ def generate_badges(tech: str, api: str, style_badge) -> str:
     # style=flat
 
 def generate_stats(user: str, api: str, style_stats) -> str:
-    prompt = f'''Create a GitHub README section using ONLY Markdown (GitHub Flavored Markdown).
-    
-    GitHub username: {user} and style that was choice: {style_stats}
-    
-    STRICT RULES:
-- Output ONLY Markdown (no explanations, no comments)
-- Everything must be directly renderable on GitHub
-- DO NOT use placeholders like STREAK_STATS_URL
-- All image URLs must be real working links from GitHub stats services
-- Use only these services:
+    prompt = f'''You are a GitHub README generator. Output ONLY raw Markdown — no explanations, no code fences, no comments.
+
+## Inputs
+- `{user}` — GitHub username
+- `{style}` — Layout style (1–5, see below)
+
+## Rules
+- All image URLs must use real services (no placeholders):
   - https://github-readme-streak-stats.herokuapp.com
   - https://github-profile-summary-cards.vercel.app
   - https://github-readme-activity-graph.vercel.app
-- Use dark theme style (Tokyo Night / neon blue / cyber aesthetic)
-- Background color: #0d1117
-- No borders (hide_border=true)
-- Everything centered using <p align="center">
+- Theme: Tokyo Night / neon blue (`hide_border=true`, `bg_color=0d1117`)
+- All elements centered with `<p align="center">`
+- Output exactly **2 visual rows**, no more
 
-REQUIRED COMPONENTS:
-1. GitHub Streak Stats
-2. GitHub Profile Summary Cards (stats)
-3. GitHub Activity Graph
+## Styles
+1. **Split Dashboard** — Streak + Summary Stats side by side (row 1) · Activity Graph full width (row 2)
+2. **Hero Header** — Large Summary Card centered (row 1) · Streak + Activity Graph side by side (row 2)
+3. **Minimal Dev** — Streak centered (row 1) · Activity Graph full width (row 2) *(no summary cards)*
+4. **Cyber Neon** — Streak + Activity Graph layered and centered (row 1) · Summary Stats below (row 2)
+5. **Data Dashboard** — Summary Stats (row 1) · Streak + Activity Graph side by side (row 2)
 
-LAYOUT RULES:
-- First row: Streak + Summary Stats (side by side, centered)
-- Second row: Activity Graph full width
-- Clean spacing between sections
-- Professional developer profile layout
-    
-    1. SPLIT DASHBOARD STYLE
-    - Streak + Stats side-by-side (centered row)
-    - Activity graph below full width
-    - Balanced dashboard look
-    
-    2. HERO HEADER STYLE
-    - Large centered stats first (summary card)
-    - Streak below
-    - Activity graph at bottom
-    - Feels like a profile landing page
-    
-    3. MINIMAL DEVELOPER STYLE
-    - Only Streak + Activity Graph
-    - No summary cards
-    - Very clean and lightweight
-    
-    4. CYBER NEON STYLE
-    - All elements centered in layers
-    - Strong neon blue/cyan theme
-    - Slight visual emphasis on activity graph
-    - Dense but aesthetic layout
-    
-    5. DATA DASHBOARD STYLE
-    - Stats first (summary cards)
-    - Streak next
-    - Activity graph last
-    - Structured like an analytics dashboard
-    
-    OUTPUT:
-    - One single Markdown block ready to paste into README.md
-    - Must be immediately visualizable on GitHub
+## Output
+Single Markdown block, ready to paste into README.md.
     '''
 
     client = Groq(api_key=api)
