@@ -13,14 +13,3 @@ class Sidebar:
 
             🔗 [LinkedIn](https://www.linkedin.com/in/eduardo-bonometti-30572a34a/)  💻 [GitHub](https://github.com/eduardo2231)
             """)
-
-            if "page" not in st.session_state:
-                st.session_state.page = "badges"
-
-            if st.button("Badges Maker"):
-                st.session_state.page = "badges"
-
-            if st.button("GitHub Maker"):
-                st.session_state.page = "github"
-
-            return st.session_state.page
