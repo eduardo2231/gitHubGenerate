@@ -1,6 +1,5 @@
-# StackAI
-
-StackAI is an intelligent badge generator for developers that transforms technology names into professional GitHub-style badges using AI. Perfect for enhancing README files, portfolios, and project documentation with automatically generated, visually appealing badges.
+# GitHubMaker 
+gitHubGenerate is an intelligent badge generator for developers that transforms technology names into professional GitHub-style badges using AI. Perfect for enhancing README files, portfolios, and project documentation with automatically generated, visually appealing badges.
 
 ## Features
 
@@ -72,13 +71,11 @@ stackai/
 ```
 
 ## API / Logic Explanation
-
-The application uses Groq's AI API to interpret technology names and generate appropriate badge configurations. The `badge_ai.py` module handles the core AI interactions, while `github_ai.py` manages GitHub-specific badge formatting. The Streamlit interface in `main.py` orchestrates user input and displays results.
+The application uses Groq's AI API to interpret technology names and generate appropriate badge configurations. The `badge_ai.py` module handles the core AI interactions. The Streamlit interface in `main.py` orchestrates user input and displays results.
 
 ## Screenshots
 
-![Example 1](app/example.png)
-![Example 2](app/example2.png)
+![Example 1](app/assets/example.png)
 
 ## Future Improvements
 
