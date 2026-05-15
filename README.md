@@ -61,12 +61,9 @@ stackai/
 │   ├── sidebar.py          # Sidebar component for the UI
 │   ├── ai/
 │   │   ├── badge_ai.py     # AI logic for badge generation
-│   │   └── github_ai.py    # GitHub-specific AI integrations
 │   ├── assets/             # Static assets
-│   └── templates/          # Template files
 ├── page/
 │   ├── badges_maker.py     # Badge creation page logic
-│   └── github_maker.py     # GitHub integration page logic
 └── README.md               # This file
 ```
 
